@@ -1,4 +1,6 @@
-public class PrimitiveType{
+package com.copasso.java.base;
+
+public class PrimitiveTypeExample {
     public static void main(String[] args) {
         // byte
         System.out.println("基本类型：byte 二进制位数：" + Byte.SIZE);

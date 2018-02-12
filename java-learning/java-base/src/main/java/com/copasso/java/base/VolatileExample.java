@@ -1,3 +1,5 @@
+package com.copasso.java.base;
+
 public class VolatileExample implements Runnable
 {
     private volatile boolean active;
