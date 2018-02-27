@@ -40,6 +40,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/java/thread/NewThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/java/thread/NewThread1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/java/hello/Welcome.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/java/dataType/TestFolatType.java" />
       </list>
     </option>
   </component>
@@ -158,6 +159,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zhoushun\Desktop\projects\learning\java-learning\java-base\src\main\java\com\copasso\java\dataType" />
       <recent name="C:\Users\zhoushun\Desktop\projects\learning\java-learning\java-base\src\main\java\com\copasso\java" />
       <recent name="C:\Users\zhoushun\Desktop\projects\learning\java-learning\java-base\src\main\java\com\copasso\java\hello" />
     </key>
@@ -321,12 +323,12 @@
       <workItem from="1518421005932" duration="83000" />
       <workItem from="1518421184947" duration="2035000" />
       <workItem from="1519630401565" duration="2034000" />
-      <workItem from="1519737846425" duration="117000" />
+      <workItem from="1519737846425" duration="720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4269000" />
+    <option name="totallyTimeSpent" value="4872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1932" height="1039" extended-state="0" />
@@ -462,6 +464,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/java/hello/Welcome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/java/dataType/TestFolatType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
