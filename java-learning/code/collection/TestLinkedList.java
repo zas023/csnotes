@@ -21,6 +21,7 @@ public class TestLinkedList{
 
 //自己实现链表
 
+//根据索引查找时，可将索引与中间值判断是从头部还是从尾部开始检索
 class MyLinkedList{
 
 	private Node first;  //链表头部
