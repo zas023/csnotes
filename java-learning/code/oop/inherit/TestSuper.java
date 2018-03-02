@@ -1,5 +1,5 @@
 /**
-*super
+*super：类似this
 */
 
 public class TestSuper{
