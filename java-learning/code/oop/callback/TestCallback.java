@@ -9,6 +9,12 @@ public class TestCallback{
 	}
 }
 
-/*callback
+/*回调的实现
+
+- Callback
+
+- Hook
+
+- 模板方法模式
 
 */
