@@ -9,6 +9,16 @@ public class TestGroup{
 	}
 }
 
+
+class A{
+
+	B b;
+}
+
+class B{
+
+}
+
 /*继承 vs 组合
 
 1. is-a 关系使用继承
