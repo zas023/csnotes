@@ -18,13 +18,17 @@ public class TestReflection2{
 			System.out.println(cl.getName());
 			System.out.println(cl.getSimpleName());
 
+			//获取属性
 			System.out.println(cl.getFields().length);//只能获取public属性
 			System.out.println(cl.getDeclaredFields().length);//获取所有声明的属性
 
 			System.out.println(cl.getDeclaredField("TAG"));
 
+			//获取参数
 			System.out.println(cl.getDeclaredMethods().length);//获取所有方法
 			System.out.println(cl.getDeclaredMethod("main", args.getClass()));//获取方法
+
+			//获取构造器
 
 		}catch(Exception e){
 			e.printStackTrace();
