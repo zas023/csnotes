@@ -6,12 +6,25 @@ import java.io.*;
 */
 public class TestReflection2{
 
+	public String TAG="TestReflection2";
+
+	private String name;
+
 	public static void main(String[] args) {
 		try{
 
 			Class cl=Class.forName("TestReflection2");
 
-			System.out.println(cl);
+			System.out.println(cl.getName());
+			System.out.println(cl.getSimpleName());
+
+			System.out.println(cl.getFields().length);//只能获取public属性
+			System.out.println(cl.getDeclaredFields().length);//获取所有声明的属性
+
+			System.out.println(cl.getDeclaredField("TAG"));
+
+			System.out.println(cl.getDeclaredMethods().length);//获取所有方法
+			System.out.println(cl.getDeclaredMethod("main", args.getClass()));//获取方法
 
 		}catch(Exception e){
 			e.printStackTrace();
