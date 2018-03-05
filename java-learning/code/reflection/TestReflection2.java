@@ -10,6 +10,21 @@ public class TestReflection2{
 
 	private String name;
 
+	public TestReflection2(){
+
+	}
+
+	public TestReflection2(String name){
+		this.name=name;
+	}
+
+	public void print(String str){
+		if (str==null) 
+			System.out.println(name);
+		else
+			System.out.println(str);
+	}
+
 	public static void main(String[] args) {
 		try{
 
@@ -29,6 +44,27 @@ public class TestReflection2{
 			System.out.println(cl.getDeclaredMethod("main", args.getClass()));//获取方法
 
 			//获取构造器
+			Constructor[] constructors=cl.getConstructors();
+
+			//通过反射API，动态构造对象
+
+			  //默认构造器
+			TestReflection2 test=(TestReflection2) cl.newInstance();  //无参构造器
+			System.out.println(test);
+              //选择构造器
+			Constructor c=cl.getDeclaredConstructor(String.class);
+			TestReflection2 test2=(TestReflection2) c.newInstance("name");
+			System.out.println(test2);
+
+			//通过反射API，动态调用方法
+			Method m =cl.getDeclaredMethod("print",String.class);
+			m.invoke(test2,"null");
+
+			//通过反射API，动态操作属性
+			Field f=cl.getDeclaredField("name");
+			f.setAccessible(true);  //设置访问私有属性（不进行安全检查）
+			f.set(test,"name");
+
 
 		}catch(Exception e){
 			e.printStackTrace();
