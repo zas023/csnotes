@@ -18,6 +18,10 @@ public class TestReflection2{
 		this.name=name;
 	}
 
+	public String getName(){
+		return name;
+	}
+
 	public void print(String str){
 		if (str==null) 
 			System.out.println(name);
