@@ -1,75 +1,51 @@
 /**
 *题目描述：
-*输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。
-*假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
-*例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。
+*用两个栈来实现一个队列，完成队列的Push和Pop操作。 
+*队列中的元素为int类型。
 */
+import java.util.Stack;
 
-//Definition for binary tree
-class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
-	TreeNode(int x) { val = x; }
-}
-
+//先进先出与先进后出
 public class Solution {
+	//保存push进入的元素
+	Stack<Integer> stack1 = new Stack<Integer>();
+	//保存pop将出的元素
+	Stack<Integer> stack2 = new Stack<Integer>();
 
-	public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
-		
-		return reConstructBinaryTree(pre,0,pre.length-1,in,0,in.length-1);
+	//如果stack2为空，则将stack1所有元素转移到stack2
 
+	//stack1只管进，stack2只管出
+
+	public void push(int node) {
+		stack1.push(node);
 	}
 
-    //前序遍历{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}
-	public TreeNode reConstructBinaryTree(int [] pre,int startPre,int endPre,int [] in,int startIn,int endIn) {
+	public int pop() {
 
-		if(startPre>endPre||startIn>endIn)
-			return null;
-
-		TreeNode root=new TreeNode(pre[startPre]);
-
-		//递归寻找左右子树
-		for(int i=startIn;i<=endIn;i++){
-			if(in[i]==pre[startPre]){
-				root.left=reConstructBinaryTree(pre,startPre+1,startPre+i-startIn,in,startIn,i-1);
-				root.right=reConstructBinaryTree(pre,i-startIn+startPre+1,endPre,in,i+1,endIn);
-				break;
-			}
+		while(!stack2.isEmpty()){
+			return stack2.pop();
 		}
 
-		return root;
+		while(!stack1.isEmpty()){
+			stack2.push(stack1.pop());
+		}
+
+		return stack2.pop();
 	}
 
-	//第一名：
-	public TreeNode reConstructBinaryTree2(int [] pre,int [] in) {
-		if(pre==null||in==null){
-			return null;
-		}
+	public static void main(String[] args) {
 
-		java.util.HashMap<Integer,Integer> map= new java.util.HashMap<Integer, Integer>();
-		for(int i=0;i<in.length;i++){
-			map.put(in[i],i);
-		}
-		return preIn(pre,0,pre.length-1,in,0,in.length-1,map);
-	}
+		Solution s=new Solution();
 
-	public TreeNode preIn(int[] p,int pi,int pj,int[] n,int ni,int nj,java.util.HashMap<Integer,Integer> map){
-
-		if(pi>pj){
-			return null;
-		}
-		TreeNode head=new TreeNode(p[pi]);
-		int index=map.get(p[pi]);
-		head.left=preIn(p,pi+1,pi+index-ni,n,ni,index-1,map);
-		head.right=preIn(p,pi+index-ni+1,pj,n,index+1,nj,map);
-		return head;
+		s.push(1);
+		s.push(2);
+		s.push(3);
+		System.out.println(s.pop());
+		System.out.println(s.pop());
+		s.push(4);
+		System.out.println(s.pop());
+		s.push(5);
+		System.out.println(s.pop());
+		System.out.println(s.pop());
 	}
 }
-
-/*
-前序第一个定位根节点
-再找到中序中此根节点的位置，左面的为左孩子，右边为有孩子
-
-int [] pre,int startPre,int endPre三个参数代表一段子序列
-*/
