@@ -5,6 +5,7 @@
 */
 public class Solution {
 
+    //方法一
     public void reOrderArray(int [] array) {
 
         if(array==null||array.length<2)
@@ -28,6 +29,9 @@ public class Solution {
             System.out.print(array[i]);
         }
     }
+
+    //方法二
+    //利用空间换时间，遍历一次原数组，分别存储奇偶数，再合并
 
     public static void main(String[] args) {
 
