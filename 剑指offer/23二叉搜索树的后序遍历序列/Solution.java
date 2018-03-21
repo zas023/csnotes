@@ -4,6 +4,9 @@
 *如果是则输出Yes,否则输出No。
 *假设输入的数组的任意两个数字都互不相同。
 */
+
+import java.util.ArrayList;
+
 class TreeNode {
     int val = 0;
     TreeNode left = null;
@@ -15,8 +18,6 @@ class TreeNode {
     }
 
 }
-
-import java.util.ArrayList;
 
 public class Solution {
 
