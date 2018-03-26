@@ -43,7 +43,6 @@ public class Solution {
         for(int i=0;i<n;++i){
             if(num==array[i]) count++;
         }
-        System.out.println(num);
 
         return (count > n/2) ? num : 0;
     }
