@@ -11,7 +11,8 @@ public class Main {
     public static int maxSubString(String str){
     	int n=str.length();
     	char[] array=str.toCharArray();
-    	int[][] dp=new int[n][n];
+		//i到j的最长回文长度
+    	int[][] dp=new int[n][n]; 
 
     	for(int i=n-1;i>=0;i--){
     		dp[i][i]=1;
