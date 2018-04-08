@@ -1,4 +1,4 @@
-package com.copasso.thread.chapter1;
+package com.copasso.thread.chapter1.section1;
 
 public class MyThreadTest {
     public static void main(String[] args) {

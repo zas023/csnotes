@@ -1,5 +1,7 @@
 package com.copasso.thread.chapter1;
 
+import com.copasso.thread.chapter1.section1.MyThread;
+
 public class Test {
     public static void main(String[] args) {
         //start()执行顺序不代表线程启动顺序
