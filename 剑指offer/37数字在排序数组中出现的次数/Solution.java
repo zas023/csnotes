@@ -4,6 +4,7 @@
 
 public class Solution {
 
+    //二分查找
     public int GetNumberOfK(int [] array , int k) {
         if (array.length==0)
             return 0;
