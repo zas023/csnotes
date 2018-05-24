@@ -1,7 +1,6 @@
 package com.copasso.tetris.view;
 
 import com.copasso.tetris.model.State;
-import com.copasso.tetris.util.Constant;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -13,6 +12,8 @@ import java.util.Random;
 import javax.swing.JFrame;
 
 import static com.copasso.tetris.util.Constant.BLOCK_SIZE;
+import static com.copasso.tetris.util.Constant.NUM_COL;
+import static com.copasso.tetris.util.Constant.NUM_ROW;
 import static java.awt.event.KeyEvent.*;
 
 /**
@@ -20,11 +21,8 @@ import static java.awt.event.KeyEvent.*;
  */
 public class GameJFrame extends JFrame implements Runnable {
 
-	private int rows= Constant.NUM_ROW;
-	private int columns=Constant.NUM_COL;
-
 	// 游戏地图格子，每个格子保存一个方块，数组纪录方块的状态
-	private State map[][] = new State[rows][columns];
+	private State map[][] = new State[NUM_ROW][NUM_COL];
 	// 标记是否正在游戏
 	private boolean isGoingOn = true;
 	// 标记是否正在下落
@@ -43,7 +41,7 @@ public class GameJFrame extends JFrame implements Runnable {
 	public GameJFrame() {
 		//初始化窗体信息
 		setTitle("俄罗斯方块");
-		setSize(columns * BLOCK_SIZE, rows * BLOCK_SIZE + 30);
+		setSize(NUM_COL * BLOCK_SIZE, NUM_ROW * BLOCK_SIZE + 30);
 		setLocationRelativeTo(null);
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -88,8 +86,8 @@ public class GameJFrame extends JFrame implements Runnable {
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
-		for (int i = 0; i < rows; i++) {
-			for (int j = 0; j < columns; j++) {
+		for (int i = 0; i < NUM_ROW; i++) {
+			for (int j = 0; j < NUM_COL; j++) {
 				if (map[i][j] == State.ACTIVE) { // 绘制活动块
 					g.setColor(Color.RED);
 					g.fillRoundRect(j * BLOCK_SIZE, i * BLOCK_SIZE + 25,
@@ -125,7 +123,7 @@ public class GameJFrame extends JFrame implements Runnable {
 		Random rand = new Random();
 		shape = rand.nextInt(8);// 随机形状
 		// 随机图形出现的中间位置
-		int randPos = rand.nextInt(columns - 4) + 2;
+		int randPos = rand.nextInt(NUM_COL - 4) + 2;
 		// 根据随机数产生不同的图形
 		switch (shape) {
 			case 0: // ─型
@@ -168,7 +166,7 @@ public class GameJFrame extends JFrame implements Runnable {
 		isFall = true; // 是否能够下落
 		// 从当前行检查，如果遇到阻碍，则停止下落
 		for (int i = 0; i < blockRows; i++) {
-			for (int j = 0; j < columns; j++) {
+			for (int j = 0; j < NUM_COL; j++) {
 				// 遍历到行中块为活动块，而下一行块为静止块，则遇到阻碍
 				if (map[rowIndex - i][j] == State.ACTIVE
 						&& map[rowIndex - i + 1][j] == State.STOPED) {
@@ -183,7 +181,7 @@ public class GameJFrame extends JFrame implements Runnable {
 		if (isFall) { // 可以下落
 			// 图形下落一行
 			for (int i = 0; i < blockRows; i++) {
-				for (int j = 0; j < columns; j++) {
+				for (int j = 0; j < NUM_COL; j++) {
 					if (map[rowIndex - i][j] == State.ACTIVE) { // 活动块向下移动一行
 						map[rowIndex - i][j] = State.EMPTY; // 原活动块变成空块
 						map[rowIndex - i + 1][j] = State.ACTIVE; // 下一行块变成活动块
@@ -211,7 +209,7 @@ public class GameJFrame extends JFrame implements Runnable {
 				hasBlock = true;
 				break; // 有阻碍，不用再循环判断行
 			} else {
-				for (int j = 1; j < columns; j++) { // 判断左边是否有其它块
+				for (int j = 1; j < NUM_COL; j++) { // 判断左边是否有其它块
 					if (map[rowIndex - i][j] == State.ACTIVE
 							&& map[rowIndex - i][j - 1] == State.STOPED) {
 						hasBlock = true;
@@ -226,7 +224,7 @@ public class GameJFrame extends JFrame implements Runnable {
 		/* 左边没有阻碍，则将图形向左移动一个块的距离 */
 		if (!hasBlock) {
 			for (int i = 0; i < blockRows; i++) {
-				for (int j = 1; j < columns; j++) {
+				for (int j = 1; j < NUM_COL; j++) {
 					if (map[rowIndex - i][j] == State.ACTIVE) {
 						map[rowIndex - i][j] = State.EMPTY;
 						map[rowIndex - i][j - 1] = State.ACTIVE;
@@ -248,11 +246,11 @@ public class GameJFrame extends JFrame implements Runnable {
 
 		/* 判断是否右边有阻碍 */
 		for (int i = 0; i < blockRows; i++) {
-			if (map[rowIndex - i][columns - 1] == State.ACTIVE) { // 判断右边是否为墙
+			if (map[rowIndex - i][NUM_COL - 1] == State.ACTIVE) { // 判断右边是否为墙
 				hasBlock = true;
 				break; // 有阻碍，不用再循环判断行
 			} else {
-				for (int j = 0; j < columns - 1; j++) { // 判断右边是否有其它块
+				for (int j = 0; j < NUM_COL - 1; j++) { // 判断右边是否有其它块
 					if (map[rowIndex - i][j] == State.ACTIVE
 							&& map[rowIndex - i][j + 1] == State.STOPED) {
 						hasBlock = true;
@@ -267,7 +265,7 @@ public class GameJFrame extends JFrame implements Runnable {
 		/* 右边没有阻碍，则将图形向右移动一个块的距离 */
 		if (!hasBlock) {
 			for (int i = 0; i < blockRows; i++) {
-				for (int j = columns - 2; j >= 0; j--) {
+				for (int j = NUM_COL - 2; j >= 0; j--) {
 					if (map[rowIndex - i][j] == State.ACTIVE) {
 						map[rowIndex - i][j] = State.EMPTY;
 						map[rowIndex - i][j + 1] = State.ACTIVE;
@@ -300,7 +298,7 @@ public class GameJFrame extends JFrame implements Runnable {
 				State[][] tmp = new State[4][4];
 				int startColumn = 0;
 				// 找到图形开始的第一个方块位置
-				for (int i = 0; i < columns; i++) {
+				for (int i = 0; i < NUM_COL; i++) {
 					if (map[rowIndex][i] == State.ACTIVE) {
 						startColumn = i;
 						break;
@@ -341,10 +339,10 @@ public class GameJFrame extends JFrame implements Runnable {
 			} else {
 				// 临时数组，放置旋转后图形
 				State[][] tmp = new State[3][3];
-				int startColumn = columns;
+				int startColumn = NUM_COL;
 				// 找到图形开始的第一个方块位置
 				for (int j = 0; j < 3; j++) {
-					for (int i = 0; i < columns; i++) {
+					for (int i = 0; i < NUM_COL; i++) {
 						if (map[rowIndex - j][i] == State.ACTIVE) {
 							startColumn = i < startColumn ? i : startColumn;
 						}
@@ -393,23 +391,23 @@ public class GameJFrame extends JFrame implements Runnable {
 	 * 判断是否能消除行
 	 */
 	private void judge() {
-		int[] blocksCount = new int[rows]; // 记录每行有方块的列数
+		int[] blocksCount = new int[NUM_ROW]; // 记录每行有方块的列数
 		int eliminateRows = 0; // 消除的行数
 		//计算每行方块数量
-		for (int i = 0; i < rows; i++) {
+		for (int i = 0; i < NUM_ROW; i++) {
 			blocksCount[i] = 0;
-			for (int j = 0; j < columns; j++) {
+			for (int j = 0; j < NUM_COL; j++) {
 				if (map[i][j] == State.STOPED)
 					blocksCount[i]++;
 			}
 		}
 
 		//实现有满行的方块消除操作
-		for (int i = 0; i < rows; i++) {
-			if (blocksCount[i] == columns) {
+		for (int i = 0; i < NUM_ROW; i++) {
+			if (blocksCount[i] == NUM_COL) {
 				// 清除一行
 				for (int m = i; m >= 0; m--) {
-					for (int n = 0; n < columns; n++) {
+					for (int n = 0; n < NUM_COL; n++) {
 						map[m][n] = (m == 0) ? State.EMPTY : map[m - 1][n];
 					}
 				}
@@ -429,8 +427,8 @@ public class GameJFrame extends JFrame implements Runnable {
 	 * 修改图形方块状态
 	 */
 	private void changeBolckState() {
-		for (int i = 0; i < rows; i++) {
-			for (int j = 0; j < columns; j++) {
+		for (int i = 0; i < NUM_ROW; i++) {
+			for (int j = 0; j < NUM_COL; j++) {
 				if (map[i][j] == State.ACTIVE) // 将活动状态改为静止状态
 					map[i][j] = State.STOPED;
 			}
@@ -443,7 +441,7 @@ public class GameJFrame extends JFrame implements Runnable {
 			// 生成方块图形
 			generateBlocks();
 			// 图形循环下落
-			while (rowIndex < rows - 1) {
+			while (rowIndex < NUM_ROW - 1) {
 				fall(); // 下降
 				if (!isFall) {
 					break;
