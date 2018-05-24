@@ -1,5 +1,7 @@
 package com.copasso.tetris;
 
+import com.copasso.tetris.view.GamePanel;
+
 import javax.swing.*;
 
 public class App {
@@ -21,7 +23,7 @@ public class App {
 		frame.add(gamePanel);
 //		gamePanel.addKeyListener(controller);
 //		frame.addKeyListener(controller);
-//		frame.setVisible(true);
+		frame.setVisible(true);
 //		controller.newGame();
 	}
 
