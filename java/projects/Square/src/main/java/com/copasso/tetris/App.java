@@ -1,14 +1,12 @@
 package com.copasso.tetris;
 
-import com.copasso.tetris.view.GameJFrame;
-
 import javax.swing.*;
 
 public class App {
 
 	public static void main(String[] args) {
 		// 启动游戏
-//		new Thread(new GameJFrame()).start();
+//		new Thread(new GameFrame()).start();
 //		SquareFactory squareFactory = new SquareFactory();
 //		Ground ground = new Ground();
 		GamePanel gamePanel = new GamePanel();

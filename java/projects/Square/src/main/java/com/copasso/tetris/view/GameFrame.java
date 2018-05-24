@@ -17,7 +17,7 @@ import static java.awt.event.KeyEvent.*;
 /**
  * 俄罗斯方块
  */
-public class GameJFrame extends JFrame implements Runnable,KeyListener{
+public class GameFrame extends JFrame implements Runnable,KeyListener{
 
 	// 游戏地图格子，每个格子保存一个方块，数组纪录方块的状态
 	private State map[][] = new State[NUM_ROW][NUM_COL];
@@ -36,7 +36,7 @@ public class GameJFrame extends JFrame implements Runnable,KeyListener{
 	// 玩家总积分
 	private int score;
 
-	public GameJFrame() {
+	public GameFrame() {
 		//初始化窗体信息
 		setTitle("俄罗斯方块");
 		setSize(NUM_COL * BLOCK_SIZE, NUM_ROW * BLOCK_SIZE + 30);
