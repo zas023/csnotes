@@ -2,11 +2,9 @@ package com.copasso.tetris.view;
 
 import com.copasso.tetris.model.State;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.event.KeyAdapter;
+import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Random;
 
 import javax.swing.JFrame;
@@ -19,12 +17,12 @@ import static java.awt.event.KeyEvent.*;
 /**
  * 俄罗斯方块
  */
-public class GameJFrame extends JFrame implements Runnable {
+public class GameJFrame extends JFrame implements Runnable,KeyListener{
 
 	// 游戏地图格子，每个格子保存一个方块，数组纪录方块的状态
 	private State map[][] = new State[NUM_ROW][NUM_COL];
 	// 标记是否正在游戏
-	private boolean isGoingOn = true;
+	private boolean isGameOver = false;
 	// 标记是否正在下落
 	private boolean isFall = true;
 	// 图形最下一行在地图中所在行数的索引
@@ -46,75 +44,50 @@ public class GameJFrame extends JFrame implements Runnable {
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
-		/* 初始化所有的方块为空 */
-		for (int i = 0; i < map.length; i++) {
-			for (int j = 0; j < map[i].length; j++) {
-				map[i][j] = State.EMPTY;
-			}
-		}
 
-		//注册方向键事件监听器
-		this.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent e) {
-				int keyCode = e.getKeyCode();
-				if (keyCode == VK_LEFT) // 方向左键
-					left();
-				else if (keyCode == VK_RIGHT) // 方向右键
-					right();
-				else if (keyCode == VK_DOWN) // 方向下键
-					down();
-				else if (keyCode == VK_UP) // 方向上键旋转图形
-					rotate();
-			}
+		//初始化地图
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map[i].length; j++) {
+                map[i][j] = State.EMPTY;
+            }
+        }
 
-			@Override
-			public void keyReleased(KeyEvent e) {
-				int keyCode = e.getKeyCode();
-				if (keyCode == 40) { // 释放向下键，则取消快速下降
-					immediate = false;
-				}
-			}
-		});
-
-		setVisible(true);
+        addKeyListener(this);
+        setVisible(true);
 	}
 
-	/**
-	 * 绘制窗体内容，包括游戏方块，游戏积分或结束字符串
-	 */
-	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
-		for (int i = 0; i < NUM_ROW; i++) {
-			for (int j = 0; j < NUM_COL; j++) {
-				if (map[i][j] == State.ACTIVE) { // 绘制活动块
-					g.setColor(Color.RED);
-					g.fillRoundRect(j * BLOCK_SIZE, i * BLOCK_SIZE + 25,
-							BLOCK_SIZE - 1, BLOCK_SIZE - 1, BLOCK_SIZE / 5,
-							BLOCK_SIZE / 5);
-				} else if (map[i][j] == State.STOPED) { // 绘制静止块
-					g.setColor(Color.BLUE);
-					g.fillRoundRect(j * BLOCK_SIZE, i * BLOCK_SIZE + 25,
-							BLOCK_SIZE - 1, BLOCK_SIZE - 1, BLOCK_SIZE / 5,
-							BLOCK_SIZE / 5);
-				}
-			}
-		}
+    public void paint(Graphics g) {
+        super.paint(g);
+        for (int i = 0; i < NUM_ROW; i++) {
+            for (int j = 0; j < NUM_COL; j++) {
+                if (map[i][j] == State.ACTIVE) { // 绘制活动块
+                    g.setColor(Color.RED);
+                    g.fillRoundRect(j * BLOCK_SIZE, i * BLOCK_SIZE + 25,
+                            BLOCK_SIZE - 1, BLOCK_SIZE - 1, BLOCK_SIZE / 5,
+                            BLOCK_SIZE / 5);
+                } else if (map[i][j] == State.STOPED) { // 绘制静止块
+                    g.setColor(Color.BLUE);
+                    g.fillRoundRect(j * BLOCK_SIZE, i * BLOCK_SIZE + 25,
+                            BLOCK_SIZE - 1, BLOCK_SIZE - 1, BLOCK_SIZE / 5,
+                            BLOCK_SIZE / 5);
+                }
+            }
+        }
 
-		//输出得分
-		g.setColor(Color.GRAY);
-		g.setFont(new Font("Times New Roman", Font.BOLD, 30));
-		g.drawString("SCORE : " + score, 5, 70);
+        /* 打印得分 */
+        g.setColor(Color.GRAY);
+        g.setFont(new Font("Times New Roman", Font.BOLD, 30));
+        g.drawString("SCORE : " + score, 5, 70);
 
-		//游戏结束
-		if (!isGoingOn) {
-			g.setColor(Color.RED);
-			g.setFont(new Font("Times New Roman", Font.BOLD, 40));
-			g.drawString("GAME OVER !", this.getWidth() / 2 - 140,
-					this.getHeight() / 2);
-		}
-	}
+        // 游戏结束，打印结束字符串
+        if (isGameOver) {
+            g.setColor(Color.RED);
+            g.setFont(new Font("Times New Roman", Font.BOLD, 40));
+            g.drawString("GAME OVER !", this.getWidth() / 2 - 140,
+                    this.getHeight() / 2);
+        }
+    }
+
 
 	/**
 	 * 生成随机的方块图形
@@ -192,14 +165,14 @@ public class GameJFrame extends JFrame implements Runnable {
 			repaint();
 		} else if (rowIndex < blockRows) {
 			// 行索引小于生成的图形行数，说明图形刚出现就遇到阻碍，已经顶到地图最上方了，游戏结束
-			isGoingOn = false;
+            isGameOver = true;
 		}
 	}
 
 	/**
 	 * 向左走
 	 */
-	private void left() {
+	private void toLeft() {
 		// 标记左边是否有阻碍
 		boolean hasBlock = false;
 
@@ -240,7 +213,7 @@ public class GameJFrame extends JFrame implements Runnable {
 	/**
 	 * 向右走
 	 */
-	private void right() {
+	private void toRight() {
 		// 标记右边是否有阻碍
 		boolean hasBlock = false;
 
@@ -281,7 +254,7 @@ public class GameJFrame extends JFrame implements Runnable {
 	/**
 	 * 向下直走
 	 */
-	private void down() {
+	private void toDown() {
 		// 标记可以加速下落
 		immediate = true;
 	}
@@ -289,7 +262,7 @@ public class GameJFrame extends JFrame implements Runnable {
 	/**
 	 * 旋转方块图形
 	 */
-	private void rotate() {
+	private void toRotate() {
 		try {
 			if (shape == 4) { // 方形，旋转前后是同一个形状
 				return;
@@ -437,7 +410,7 @@ public class GameJFrame extends JFrame implements Runnable {
 	}
 
 	public void run() {
-		while (isGoingOn) { // 正在游戏
+		while (!isGameOver) { // 正在游戏
 			// 生成方块图形
 			generateBlocks();
 			// 图形循环下落
@@ -460,4 +433,29 @@ public class GameJFrame extends JFrame implements Runnable {
 			judge();
 		}
 	}
+
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    public void keyPressed(KeyEvent e) {
+	    switch (e.getKeyCode()){
+            case VK_LEFT:
+                toLeft();
+                break;
+            case VK_RIGHT:
+                toRight();
+                break;
+            case VK_DOWN:
+                toDown();
+                break;
+            case VK_UP:
+                toRotate();
+        }
+    }
+
+    public void keyReleased(KeyEvent e) {
+	    if (e.getKeyCode()==VK_DOWN)
+	        immediate=false;
+    }
 }
