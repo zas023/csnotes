@@ -30,7 +30,7 @@ public class GameFrame extends JFrame implements Runnable,KeyListener{
 	// 生成的图形行数
 	private int blockRows = 0;
 	// 标记是否快速下降
-	private boolean immediate = false;
+	private boolean isSpeedUp = false;
 	// 图形形状
 	private int shape;
 	// 玩家总积分
@@ -256,7 +256,7 @@ public class GameFrame extends JFrame implements Runnable,KeyListener{
 	 */
 	private void toDown() {
 		// 标记可以加速下落
-		immediate = true;
+		isSpeedUp = true;
 	}
 
 	/**
@@ -409,6 +409,8 @@ public class GameFrame extends JFrame implements Runnable,KeyListener{
 		repaint();
 	}
 
+	/************************************************************/
+
 	public void run() {
 		while (!isGameOver) { // 正在游戏
 			// 生成方块图形
@@ -422,11 +424,11 @@ public class GameFrame extends JFrame implements Runnable,KeyListener{
 				rowIndex++; // 每下降一行，指针向下移动一行
 				try {
 					// 休眠，加速休眠一毫秒，未加速休眠500毫秒
-					Thread.sleep(immediate ? 1 : 500);
+					Thread.sleep(isSpeedUp ? 1 : 500);
 				} catch (InterruptedException e) {
 				}
 			}
-			immediate = false; // 按向下键加速，默认不加速
+			isSpeedUp = false; // 按向下键加速，默认不加速
 			// 下落到遇到阻碍为止，修改图形方块状态
 			changeBolckState();
 			// 判断是否可消除行
@@ -456,6 +458,6 @@ public class GameFrame extends JFrame implements Runnable,KeyListener{
 
     public void keyReleased(KeyEvent e) {
 	    if (e.getKeyCode()==VK_DOWN)
-	        immediate=false;
+	        isSpeedUp=false;
     }
 }
