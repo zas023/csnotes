@@ -6,7 +6,7 @@ public class App {
 
 	public static void main(String[] args) {
 		// 启动游戏
-		new Thread(new GameClient()).start();
+		new GameClient();
 	}
 
 }

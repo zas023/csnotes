@@ -13,55 +13,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="TicTacToeClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/TicTacToeClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="48" column="36" lean-forward="true" selection-start-line="35" selection-start-column="2" selection-end-line="48" selection-end-column="36" />
-              <folding>
-                <element signature="docComment;method#init#0;class#TicTacToeClient#0" expanded="false" />
-                <element signature="e#3286#3330#0" expanded="false" />
-                <element signature="docComment;method#waitForPlayerAction#0;class#TicTacToeClient#0" expanded="false" />
-                <element signature="docComment;method#sendMove#0;class#TicTacToeClient#0" expanded="false" />
-                <element signature="docComment;method#receiveInfoFromServer#0;class#TicTacToeClient#0" expanded="false" />
-                <element signature="docComment;method#getToken#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-                <element signature="docComment;method#setToken#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-                <element signature="docComment;class#ClickListener#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-                <element signature="method#mouseClicked#0;class#ClickListener#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-                <element signature="docComment;method#main#0;class#TicTacToeClient#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GameClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="49" column="41" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="41" />
+            <state relative-caret-position="425">
+              <caret line="101" column="53" lean-forward="true" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#paint#0;class#GameClient#0" expanded="false" />
                 <element signature="method#fall#0;class#GameClient#0" expanded="false" />
-                <element signature="e#2573#2580#0" expanded="false" />
-                <element signature="e#3055#3056#0" expanded="true" />
-                <element signature="e#3072#3073#0" expanded="true" />
-                <element signature="docComment;method#toLeft#0;class#GameClient#0" expanded="false" />
+                <element signature="e#3031#3038#0" expanded="false" />
                 <element signature="method#toLeft#0;class#GameClient#0" expanded="false" />
-                <element signature="docComment;method#toRight#0;class#GameClient#0" expanded="false" />
                 <element signature="method#toRight#0;class#GameClient#0" expanded="false" />
-                <element signature="docComment;method#toRotate#0;class#GameClient#0" expanded="false" />
                 <element signature="method#toRotate#0;class#GameClient#0" expanded="false" />
-                <element signature="e#4897#4902#0" expanded="false" />
-                <element signature="docComment;method#randomBlocks#0;class#GameClient#0" expanded="false" />
+                <element signature="e#5357#5362#0" expanded="false" />
                 <element signature="method#randomBlocks#0;class#GameClient#0" expanded="false" />
-                <element signature="e#7722#7772#0" expanded="false" />
-                <element signature="docComment;method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-                <element signature="method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-                <element signature="docComment;method#changeBolckState#0;class#GameClient#0" expanded="false" />
+                <element signature="e#8182#8232#0" expanded="false" />
                 <element signature="method#changeBolckState#0;class#GameClient#0" expanded="false" />
-                <element signature="e#10539#10546#0" expanded="false" />
-                <element signature="docComment;method#keyTyped#0;class#GameClient#0" expanded="false" />
+                <element signature="method#keyTyped#0;class#GameClient#0" expanded="false" />
+                <element signature="method#keyPressed#0;class#GameClient#0" expanded="false" />
+                <element signature="method#keyReleased#0;class#GameClient#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -70,13 +40,9 @@
       <file leaf-file-name="GameServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/GameServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
-                <element signature="e#377#378#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="798">
+              <caret line="58" column="10" lean-forward="false" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,11 +50,10 @@
       <file leaf-file-name="HandleASession.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleASession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3013">
-              <caret line="139" column="59" lean-forward="false" selection-start-line="139" selection-start-column="59" selection-end-line="139" selection-end-column="59" />
+            <state relative-caret-position="867">
+              <caret line="50" column="51" lean-forward="false" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#HandleASession#0;class#HandleASession#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -129,6 +94,10 @@
       <find>getCodeBase</find>
       <find>isStandAlone</find>
       <find>init</find>
+      <find>Hand</find>
+      <find>score</find>
+      <find>receiveInfoFromServer</find>
+      <find>continueToPlay</find>
     </findStrings>
     <replaceStrings>
       <replace>SquarePanel.IImage</replace>
@@ -188,16 +157,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/controler/GameController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameJPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GamePanel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/TicTacToeConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/TicTacToeServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/Cell.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/GameServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleASession.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/TicTacToeClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/GameModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/TicTacToeClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/util/Constant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/GameServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleASession.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameClient.java" />
       </list>
     </option>
@@ -513,9 +482,9 @@
     <recent_temporary>
       <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Application.App" />
-        <item index="1" class="java.lang.String" itemvalue="Application.GameClient" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TicTacToeClient" />
-        <item index="3" class="java.lang.String" itemvalue="Application.GameServer" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GameServer" />
+        <item index="2" class="java.lang.String" itemvalue="Application.GameClient" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TicTacToeClient" />
       </list>
     </recent_temporary>
   </component>
@@ -539,12 +508,12 @@
       <workItem from="1527560174035" duration="5946000" />
       <workItem from="1527567640780" duration="3769000" />
       <workItem from="1527574989042" duration="7350000" />
-      <workItem from="1527592750497" duration="4528000" />
+      <workItem from="1527592750497" duration="12475000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41098000" />
+    <option name="totallyTimeSpent" value="49045000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -557,7 +526,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -568,12 +536,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3249715" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27628756" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -585,7 +554,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,27 +575,18 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#paint#0;class#GameClient#0" expanded="false" />
             <element signature="method#fall#0;class#GameClient#0" expanded="false" />
-            <element signature="e#2573#2580#0" expanded="false" />
-            <element signature="e#3055#3056#0" expanded="true" />
-            <element signature="e#3072#3073#0" expanded="true" />
-            <element signature="docComment;method#toLeft#0;class#GameClient#0" expanded="false" />
+            <element signature="e#3031#3038#0" expanded="false" />
             <element signature="method#toLeft#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#toRight#0;class#GameClient#0" expanded="false" />
             <element signature="method#toRight#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#toRotate#0;class#GameClient#0" expanded="false" />
             <element signature="method#toRotate#0;class#GameClient#0" expanded="false" />
-            <element signature="e#4897#4902#0" expanded="false" />
-            <element signature="docComment;method#randomBlocks#0;class#GameClient#0" expanded="false" />
+            <element signature="e#5357#5362#0" expanded="false" />
             <element signature="method#randomBlocks#0;class#GameClient#0" expanded="false" />
-            <element signature="e#7722#7772#0" expanded="false" />
-            <element signature="docComment;method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-            <element signature="method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#changeBolckState#0;class#GameClient#0" expanded="false" />
+            <element signature="e#8182#8232#0" expanded="false" />
             <element signature="method#changeBolckState#0;class#GameClient#0" expanded="false" />
-            <element signature="e#10539#10546#0" expanded="false" />
-            <element signature="docComment;method#keyTyped#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#GameClient#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -637,18 +596,18 @@
         <state relative-caret-position="253">
           <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#891#892#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#298#299#0" expanded="false" />
+            <element signature="e#672#673#0" expanded="false" />
+            <element signature="e#711#712#0" expanded="false" />
+            <element signature="e#743#744#0" expanded="false" />
+            <element signature="e#783#784#0" expanded="false" />
+            <element signature="e#814#815#0" expanded="false" />
+            <element signature="e#855#856#0" expanded="false" />
+            <element signature="e#891#892#0" expanded="false" />
+            <element signature="e#919#920#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
+            <element signature="e#978#979#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -657,19 +616,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
           <caret line="61" column="13" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;method#init#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="e#3286#3330#0" expanded="false" />
-            <element signature="docComment;method#waitForPlayerAction#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="method#waitForPlayerAction#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;method#sendMove#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="method#sendMove#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;method#receiveInfoFromServer#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;method#getToken#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;method#setToken#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;class#ClickListener#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#ClickListener#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;method#main#0;class#TicTacToeClient#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#fall#0;class#GameClient#0" expanded="false" />
+            <element signature="e#3031#3038#0" expanded="false" />
+            <element signature="method#toLeft#0;class#GameClient#0" expanded="false" />
+            <element signature="method#toRight#0;class#GameClient#0" expanded="false" />
+            <element signature="method#toRotate#0;class#GameClient#0" expanded="false" />
+            <element signature="e#5357#5362#0" expanded="false" />
+            <element signature="method#randomBlocks#0;class#GameClient#0" expanded="false" />
+            <element signature="e#8182#8232#0" expanded="false" />
+            <element signature="method#changeBolckState#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#GameClient#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -680,58 +648,18 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#paint#0;class#GameClient#0" expanded="false" />
             <element signature="method#fall#0;class#GameClient#0" expanded="false" />
-            <element signature="e#2573#2580#0" expanded="false" />
-            <element signature="e#3055#3056#0" expanded="true" />
-            <element signature="e#3072#3073#0" expanded="true" />
-            <element signature="docComment;method#toLeft#0;class#GameClient#0" expanded="false" />
+            <element signature="e#3031#3038#0" expanded="false" />
             <element signature="method#toLeft#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#toRight#0;class#GameClient#0" expanded="false" />
             <element signature="method#toRight#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#toRotate#0;class#GameClient#0" expanded="false" />
             <element signature="method#toRotate#0;class#GameClient#0" expanded="false" />
-            <element signature="e#4897#4902#0" expanded="false" />
-            <element signature="docComment;method#randomBlocks#0;class#GameClient#0" expanded="false" />
+            <element signature="e#5357#5362#0" expanded="false" />
             <element signature="method#randomBlocks#0;class#GameClient#0" expanded="false" />
-            <element signature="e#7722#7772#0" expanded="false" />
-            <element signature="docComment;method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-            <element signature="method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#changeBolckState#0;class#GameClient#0" expanded="false" />
+            <element signature="e#8182#8232#0" expanded="false" />
             <element signature="method#changeBolckState#0;class#GameClient#0" expanded="false" />
-            <element signature="e#10539#10546#0" expanded="false" />
-            <element signature="docComment;method#keyTyped#0;class#GameClient#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#paint#0;class#GameClient#0" expanded="false" />
-            <element signature="method#fall#0;class#GameClient#0" expanded="false" />
-            <element signature="e#2573#2580#0" expanded="false" />
-            <element signature="e#3055#3056#0" expanded="true" />
-            <element signature="e#3072#3073#0" expanded="true" />
-            <element signature="docComment;method#toLeft#0;class#GameClient#0" expanded="false" />
-            <element signature="method#toLeft#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#toRight#0;class#GameClient#0" expanded="false" />
-            <element signature="method#toRight#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#toRotate#0;class#GameClient#0" expanded="false" />
-            <element signature="method#toRotate#0;class#GameClient#0" expanded="false" />
-            <element signature="e#4897#4902#0" expanded="false" />
-            <element signature="docComment;method#randomBlocks#0;class#GameClient#0" expanded="false" />
-            <element signature="method#randomBlocks#0;class#GameClient#0" expanded="false" />
-            <element signature="e#7722#7772#0" expanded="false" />
-            <element signature="docComment;method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-            <element signature="method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#changeBolckState#0;class#GameClient#0" expanded="false" />
-            <element signature="method#changeBolckState#0;class#GameClient#0" expanded="false" />
-            <element signature="e#10539#10546#0" expanded="false" />
-            <element signature="docComment;method#keyTyped#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#GameClient#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -741,8 +669,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#841#858#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#849#866#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -753,27 +681,18 @@
           <caret line="463" column="5" lean-forward="false" selection-start-line="463" selection-start-column="5" selection-end-line="463" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#paint#0;class#GameClient#0" expanded="false" />
             <element signature="method#fall#0;class#GameClient#0" expanded="false" />
-            <element signature="e#2573#2580#0" expanded="false" />
-            <element signature="e#3055#3056#0" expanded="true" />
-            <element signature="e#3072#3073#0" expanded="true" />
-            <element signature="docComment;method#toLeft#0;class#GameClient#0" expanded="false" />
+            <element signature="e#3031#3038#0" expanded="false" />
             <element signature="method#toLeft#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#toRight#0;class#GameClient#0" expanded="false" />
             <element signature="method#toRight#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#toRotate#0;class#GameClient#0" expanded="false" />
             <element signature="method#toRotate#0;class#GameClient#0" expanded="false" />
-            <element signature="e#4897#4902#0" expanded="false" />
-            <element signature="docComment;method#randomBlocks#0;class#GameClient#0" expanded="false" />
+            <element signature="e#5357#5362#0" expanded="false" />
             <element signature="method#randomBlocks#0;class#GameClient#0" expanded="false" />
-            <element signature="e#7722#7772#0" expanded="false" />
-            <element signature="docComment;method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-            <element signature="method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#changeBolckState#0;class#GameClient#0" expanded="false" />
+            <element signature="e#8182#8232#0" expanded="false" />
             <element signature="method#changeBolckState#0;class#GameClient#0" expanded="false" />
-            <element signature="e#10539#10546#0" expanded="false" />
-            <element signature="docComment;method#keyTyped#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#GameClient#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -798,6 +717,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -868,52 +788,29 @@
         <state relative-caret-position="207">
           <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#891#892#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#298#299#0" expanded="false" />
+            <element signature="e#672#673#0" expanded="false" />
+            <element signature="e#711#712#0" expanded="false" />
+            <element signature="e#743#744#0" expanded="false" />
+            <element signature="e#783#784#0" expanded="false" />
+            <element signature="e#814#815#0" expanded="false" />
+            <element signature="e#855#856#0" expanded="false" />
+            <element signature="e#891#892#0" expanded="false" />
+            <element signature="e#919#920#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
+            <element signature="e#978#979#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/GameMap.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/ServerConstants.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleASession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3013">
-          <caret line="139" column="59" lean-forward="false" selection-start-line="139" selection-start-column="59" selection-end-line="139" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#HandleASession#0;class#HandleASession#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/controler/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/GameServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#377#378#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -930,8 +827,8 @@
         <state relative-caret-position="282">
           <caret line="167" column="15" lean-forward="false" selection-start-line="167" selection-start-column="15" selection-end-line="167" selection-end-column="15" />
           <folding>
-            <element signature="e#5026#5027#0" expanded="true" />
-            <element signature="e#5067#5068#0" expanded="true" />
+            <element signature="e#5026#5027#0" expanded="false" />
+            <element signature="e#5067#5068#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -941,19 +838,8 @@
         <state relative-caret-position="282">
           <caret line="809" column="18" lean-forward="false" selection-start-line="809" selection-start-column="18" selection-end-line="809" selection-end-column="18" />
           <folding>
-            <element signature="e#30373#30374#0" expanded="true" />
-            <element signature="e#30400#30401#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/util/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="15" column="40" lean-forward="false" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#841#858#0" expanded="true" />
+            <element signature="e#30373#30374#0" expanded="false" />
+            <element signature="e#30400#30401#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -961,57 +847,63 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/TicTacToeClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="48" column="36" lean-forward="true" selection-start-line="35" selection-start-column="2" selection-end-line="48" selection-end-column="36" />
+        <state relative-caret-position="190">
+          <caret line="105" column="16" lean-forward="false" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/util/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleASession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="50" column="51" lean-forward="false" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
           <folding>
-            <element signature="docComment;method#init#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="e#3286#3330#0" expanded="false" />
-            <element signature="docComment;method#waitForPlayerAction#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;method#sendMove#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;method#receiveInfoFromServer#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;method#getToken#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;method#setToken#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;class#ClickListener#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#ClickListener#0;class#Cell#0;class#TicTacToeClient#0" expanded="false" />
-            <element signature="docComment;method#main#0;class#TicTacToeClient#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/GameServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="58" column="10" lean-forward="false" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="49" column="41" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="41" />
+        <state relative-caret-position="425">
+          <caret line="101" column="53" lean-forward="true" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#paint#0;class#GameClient#0" expanded="false" />
             <element signature="method#fall#0;class#GameClient#0" expanded="false" />
-            <element signature="e#2573#2580#0" expanded="false" />
-            <element signature="e#3055#3056#0" expanded="true" />
-            <element signature="e#3072#3073#0" expanded="true" />
-            <element signature="docComment;method#toLeft#0;class#GameClient#0" expanded="false" />
+            <element signature="e#3031#3038#0" expanded="false" />
             <element signature="method#toLeft#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#toRight#0;class#GameClient#0" expanded="false" />
             <element signature="method#toRight#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#toRotate#0;class#GameClient#0" expanded="false" />
             <element signature="method#toRotate#0;class#GameClient#0" expanded="false" />
-            <element signature="e#4897#4902#0" expanded="false" />
-            <element signature="docComment;method#randomBlocks#0;class#GameClient#0" expanded="false" />
+            <element signature="e#5357#5362#0" expanded="false" />
             <element signature="method#randomBlocks#0;class#GameClient#0" expanded="false" />
-            <element signature="e#7722#7772#0" expanded="false" />
-            <element signature="docComment;method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-            <element signature="method#judgeBolcks#0;class#GameClient#0" expanded="false" />
-            <element signature="docComment;method#changeBolckState#0;class#GameClient#0" expanded="false" />
+            <element signature="e#8182#8232#0" expanded="false" />
             <element signature="method#changeBolckState#0;class#GameClient#0" expanded="false" />
-            <element signature="e#10539#10546#0" expanded="false" />
-            <element signature="docComment;method#keyTyped#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#GameClient#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#GameClient#0" expanded="false" />
           </folding>
         </state>
       </provider>

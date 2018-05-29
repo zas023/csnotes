@@ -7,13 +7,13 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
 import java.util.Random;
 
 import javax.swing.*;
 
-import static com.copasso.tetris.util.Constant.BLOCK_SIZE;
-import static com.copasso.tetris.util.Constant.NUM_COL;
-import static com.copasso.tetris.util.Constant.NUM_ROW;
+import static com.copasso.tetris.util.Constant.*;
 import static java.awt.event.KeyEvent.*;
 
 /**
@@ -36,21 +36,17 @@ public class GameClient extends JFrame implements Runnable,KeyListener{
 	// 图形形状
 	private int shape;
 	// 玩家总积分
-	private int score;
+	private int score1;
+	private int score2;
 
 	private DataInputStream fromServer;
 	private DataOutputStream toServer;
 
-	// Continue to play?
 	private boolean continueToPlay = true;
 
-	// Wait for the player to mark a cell
-	private boolean waiting = true;
+	private boolean isWaiting = true;
+	private boolean isStarted = false;
 
-	// Indicate if it runs as application
-	private boolean isStandAlone = false;
-
-	// Host name or ip
 	private String host = "localhost";
 
 	public GameClient() {
@@ -72,15 +68,38 @@ public class GameClient extends JFrame implements Runnable,KeyListener{
 		}
 		addKeyListener(this);
 		setVisible(true);
+
+		connectToServer();
+
+		new Thread(this).start();
 	}
 
+	/**
+	 * 连接服务器
+	 */
+	private void connectToServer() {
+		try {
+			// Create a socket to connect to the server
+			Socket socket = new Socket(host, 8000);
+			// Create an input stream to receive data from the server
+			fromServer = new DataInputStream(socket.getInputStream());
+			// Create an output stream to send data to the server
+			toServer = new DataOutputStream(socket.getOutputStream());
+		}
+		catch (Exception ex) {
+			System.err.println(ex);
+		}
+	}
+
+	/************************************************************/
 	public void paint(Graphics g) {
 		super.paint(g);
 
 		// 打印得分
 		g.setColor(Color.GRAY);
-		g.setFont(new Font("Times New Roman", Font.BOLD, 30));
-		g.drawString("SCORE : " + score, 5, 70);
+		g.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		g.drawString("YOUR SCORE : " + score1, 5, 50);
+		g.drawString("HIS SCORE : " + score2, 5, 80);
 
 		// 游戏结束，打印结束字符串
 		if (isGameOver) {
@@ -131,7 +150,7 @@ public class GameClient extends JFrame implements Runnable,KeyListener{
 	}
 
 	/**
-	 * 向左走
+	 * 向左移动
 	 */
 	public void toLeft() {
 
@@ -172,7 +191,7 @@ public class GameClient extends JFrame implements Runnable,KeyListener{
 	}
 
 	/**
-	 * 向右走
+	 * 向右移动
 	 */
 	public void toRight() {
 		// 标记右边是否有阻碍
@@ -417,10 +436,15 @@ public class GameClient extends JFrame implements Runnable,KeyListener{
 				eliminateRows++; // 记录消除行数
 			}
 		}
-
 		// 计算积分
-		score += eliminateRows == 1 ? 10 : (eliminateRows == 2 ? 30
-				: (eliminateRows == 3 ? 60 : (eliminateRows == 0 ? 0 : 100)));
+		score1 += eliminateRows == 1 ? 10 : (
+				eliminateRows == 2 ? 30 : (eliminateRows == 3 ? 60 : (eliminateRows == 0 ? 0 : 100)));
+		//得分则向服务器提交分数
+		try {
+			toServer.writeInt(score1);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		// 重绘方块
 		repaint();
 	}
@@ -439,29 +463,84 @@ public class GameClient extends JFrame implements Runnable,KeyListener{
 	}
 
 	/************************************************************/
+	/**
+	 * 向服务器提交分数
+	 * @throws IOException
+	 */
+	private void sendToServer() throws IOException {
+		toServer.writeInt(score1);
+	}
+
+	/**
+	 * 接受服务器消息
+	 * @throws IOException
+	 */
+	private void receiveInfoFromServer() throws IOException {
+		// Receive game status
+		int status = fromServer.readInt();
+		System.out.println("status:"+status);
+		if (status == PLAYER1_WON) {
+			// Player 1 won, stop playing
+			continueToPlay = false;
+
+		}
+		else if (status == PLAYER2_WON) {
+			// Player 2 won, stop playing
+			continueToPlay = false;
+
+		}
+		else if (status == PLAYER_DRAW) {
+			// No winner, game is over
+
+		} else if (status==PLAYER_START){
+			//start game
+			isStarted=true;
+		}else {
+			//get other's score
+			score2=status;
+		}
+	}
+
 	public void run() {
-		while (!isGameOver) { // 正在游戏
-			// 生成方块图形
-			randomBlocks();
-			// 图形循环下落
-			while (rowIndex < NUM_ROW - 1) {
-				fall(); // 下降
-				if (!isFall) {
-					break;
-				}
-				// 每下降一行，指针向下移动一行
-				toDown();
+		while (true) { // 正在游戏
+			if (isWaiting){
 				try {
-					// 休眠，加速休眠一毫秒，未加速休眠500毫秒
-					Thread.sleep(isSpeedUp ? 1 : 500);
-				} catch (InterruptedException e) {
+					System.out.println("receiveInfoFromServer start");
+					receiveInfoFromServer();
+					System.out.println("receiveInfoFromServer end");
+				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
-			// 下落到遇到阻碍为止，修改图形方块状态
-			changeBolckState();
-			// 判断是否可消除行
-			judgeBolcks();
+//			System.out.println((!isGameOver)&&isStarted);
+			if ((!isGameOver)&&isStarted){
+				// 生成方块图形
+				randomBlocks();
+				System.out.println("randomBlocks");
+				// 图形循环下落
+				while (rowIndex < NUM_ROW - 1) {
+					fall(); // 下降
+					if (!isFall) {
+						break;
+					}
+					// 每下降一行，指针向下移动一行
+					System.out.println(rowIndex);
+					toDown();
+					try {
+						// 休眠，加速休眠一毫秒，未加速休眠500毫秒
+						Thread.sleep(isSpeedUp ? 1 : 500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+				// 下落到遇到阻碍为止，修改图形方块状态
+				System.out.println("changeBolckState start");
+				changeBolckState();
+				System.out.println("changeBolckState end");
+				// 判断是否可消除行
+				judgeBolcks();
+				System.out.println("judgeBolcks end");
+			}
 		}
 	}
 
