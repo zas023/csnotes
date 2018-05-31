@@ -74,7 +74,7 @@ public class GameController implements KeyListener {
                 panel.repaint();
                 System.out.println("changeBolckState end");
                 // 判断是否可消除行
-                //int score=panel.getScore();
+                int score=panel.getScore();
                 System.out.println("judgeBolcks end");
             }
         }
