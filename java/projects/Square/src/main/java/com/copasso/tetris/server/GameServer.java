@@ -8,6 +8,9 @@ import java.util.Date;
 import static com.copasso.tetris.util.Constant.PLAYER1;
 import static com.copasso.tetris.util.Constant.PLAYER2;
 
+/**
+ * 服务端JFrame
+ */
 public class GameServer extends JFrame{
 
   public static void main(String[] args) {
@@ -62,10 +65,12 @@ public class GameServer extends JFrame{
         jtaLog.append(new Date() + ": Start a thread for session " + sessionNo++ + '\n');
 
         // Create a new thread for this session of two players
-        HandleASession task = new HandleASession(player1, player2);
+        HandleThread task1 = new HandleThread(player1, player2);
+        HandleThread task2 = new HandleThread(player2, player1);
 
         // Start the new thread
-        new Thread(task).start();
+        new Thread(task1).start();
+        new Thread(task2).start();
       }
     }
     catch(IOException ex) {

@@ -1,6 +1,8 @@
-package com.copasso.tetris.model;
+package com.copasso.tetris.view;
 
 import com.copasso.tetris.controler.GameController;
+import com.copasso.tetris.model.Cell;
+import com.copasso.tetris.model.GameListener;
 
 import javax.swing.*;
 
@@ -11,9 +13,13 @@ import static com.copasso.tetris.util.Constant.BLOCK_SIZE;
 import static com.copasso.tetris.util.Constant.NUM_COL;
 import static com.copasso.tetris.util.Constant.NUM_ROW;
 
+/**
+ * 游戏界面
+ */
 public class GameJPanel extends JPanel {
 
     private GameController controller;
+    private GameListener listener;
 
     // 游戏地图格子，每个格子保存一个方块，数组纪录方块的状态
     private Cell map[][] = new Cell[NUM_ROW][NUM_COL];
@@ -44,6 +50,8 @@ public class GameJPanel extends JPanel {
     public void setController(GameController controller){
         this.controller=controller;
     }
+
+    public void setListener(GameListener listener){this.listener=listener;}
 
     /**
      * 向下移动

@@ -1,32 +1,42 @@
 package com.copasso.tetris.view;
 
 import com.copasso.tetris.controler.GameController;
-import com.copasso.tetris.model.GameJPanel;
+import com.copasso.tetris.model.GameListener;
 
 import javax.swing.*;
+
+import java.awt.*;
 
 import static com.copasso.tetris.util.Constant.BLOCK_SIZE;
 import static com.copasso.tetris.util.Constant.NUM_COL;
 import static com.copasso.tetris.util.Constant.NUM_ROW;
 
-public class GameJFrame extends JFrame {
+/**
+ * 主界面JFrame
+ */
+public class MainJFrame extends JFrame {
 
-    private GameJPanel panel;
+    private GameJPanel gameJPanel;
+    private MenuJPanel menuJPanel;
     private GameController controller;
 
-    public GameJFrame(){
+    public MainJFrame(){
         setTitle("俄罗斯方块");
-        setSize(NUM_COL * BLOCK_SIZE, NUM_ROW * BLOCK_SIZE);
+        setSize(NUM_COL * BLOCK_SIZE+100, NUM_ROW * BLOCK_SIZE);
         setLocationRelativeTo(null);
         setAlwaysOnTop(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
 
-        panel=new GameJPanel();
-        controller=new GameController(panel);
-        panel.setController(controller);
+        gameJPanel=new GameJPanel();
 
-        setContentPane(panel);
+        menuJPanel=new MenuJPanel();
+        getContentPane().add("Center",gameJPanel);
+        getContentPane().add("East", menuJPanel);
+
+        controller=new GameController(gameJPanel,menuJPanel);
+        gameJPanel.setController(controller);
+
         setVisible(true);
 
         addKeyListener(controller);

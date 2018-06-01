@@ -8,31 +8,52 @@ import java.net.Socket;
  */
 public class HandleThread implements Runnable{
 
-    private Socket socket;
-    BufferedReader bufferedReader;
-    BufferedWriter bufferedWriter;
+    private Socket player1;
+    private Socket player2;
 
-    public HandleThread (Socket socket) {
-        this.socket = socket;
-        try {
-            bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        new Thread(this).start();
+    private DataInputStream fromPlayer;
+    private DataOutputStream toPlayer;
+
+
+    public HandleThread (Socket player1, Socket player2) {
+        this.player1 = player1;
+        this.player2 = player2;
     }
 
-    public void run() {
 
+    public void run() {
+        try {
+            // Create data input and output streams
+            fromPlayer = new DataInputStream(player1.getInputStream());
+            toPlayer = new DataOutputStream(player2.getOutputStream());
+
+            toPlayer.writeInt(1);
+
+            while (true) {
+                // 从客户端中获取得分
+                System.out.println("readInt start");
+                int score = fromPlayer.readInt();
+                toPlayer.writeInt(score);
+                System.out.println("writeInt end");
+            }
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void sendMessage(String str){
-        // 这里负责写
         try {
-            bufferedWriter.write(str);
-            bufferedWriter.newLine();
-            bufferedWriter.flush();
+            toPlayer.writeChars(str);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void sendMessage(int i){
+        try {
+            toPlayer.writeInt(i);
         } catch (IOException e) {
             e.printStackTrace();
         }
