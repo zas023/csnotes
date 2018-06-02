@@ -22,7 +22,7 @@ public class GameJPanel extends JPanel {
     private GameListener listener;
 
     // 游戏地图格子，每个格子保存一个方块，数组纪录方块的状态
-    private Cell map[][] = new Cell[NUM_ROW][NUM_COL];
+    private volatile Cell map[][] = new Cell[NUM_ROW][NUM_COL];
     // 图形最下一行在地图中所在行数的索引
     private int rowIndex = 0;
     // 生成的图形行数
@@ -58,6 +58,7 @@ public class GameJPanel extends JPanel {
      */
     public void toDown(){
         rowIndex++;
+        repaint();
     }
 
     /**
@@ -96,6 +97,8 @@ public class GameJPanel extends JPanel {
                 }
             }
         }
+
+        repaint();
     }
 
     /**
@@ -133,6 +136,8 @@ public class GameJPanel extends JPanel {
                 }
             }
         }
+
+        repaint();
     }
 
     /**
@@ -247,8 +252,6 @@ public class GameJPanel extends JPanel {
         }
     }
 
-    /************************************************************/
-
     /**
      * 判断能否下落
      */
@@ -282,17 +285,30 @@ public class GameJPanel extends JPanel {
             isGameOver=true;
         }
     }
+    /************************************************************/
 
-    public boolean canDrop(){
-        return rowIndex < NUM_ROW - 1;
-    }
     public boolean isGameOver(){
         return isGameOver;
     }
     public boolean isFall(){
         return isFall;
     }
+    public boolean canDrop(){
+        return rowIndex < NUM_ROW - 1;
+    }
 
+    public Cell[][] getMap(){
+        return map;
+    }
+
+    public void setMapColor(Color[][] mapColor){
+        for (int i=0;i<mapColor.length;i++)
+            for (int j = 0; j < mapColor[0].length; j++)
+                map[i][j].setColor(mapColor[i][j]);
+        repaint();
+    }
+
+    /************************************************************/
     /**
      * 生成随机的方块图形
      */
@@ -356,6 +372,7 @@ public class GameJPanel extends JPanel {
         }
 
         rowIndex = blockRows - 1;
+        repaint();
     }
 
     /**
@@ -400,6 +417,6 @@ public class GameJPanel extends JPanel {
                     map[i][j].setColor(Color.BLUE);
             }
         }
+        repaint();
     }
-
 }

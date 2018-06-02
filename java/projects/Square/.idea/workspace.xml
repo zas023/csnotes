@@ -12,18 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,8 +24,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>���ǽ���ͼ�Σ����γ��Լ����ϰ���ķ���</find>
-      <find>serialVersionUID</find>
       <find>isGoingOn</find>
       <find>totalScore</find>
       <find>rows</find>
@@ -63,8 +50,10 @@
       <find>blockRows</find>
       <find>repaint</find>
       <find>isFall</find>
-      <find>controller</find>
       <find>isRunning</find>
+      <find>MSG_SCORE</find>
+      <find>controller</find>
+      <find>GameTask</find>
     </findStrings>
     <replaceStrings>
       <replace>SquarePanel.IImage</replace>
@@ -112,10 +101,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/TicTacToeConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/TicTacToeServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/Cell.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/GameModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/TicTacToeClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/util/Constant.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleASession.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/Rect.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/GamePanel.java" />
@@ -128,13 +115,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameJFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/ScoreListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/GameListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleThread.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/controler/GameController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/controler/ServerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/GameServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameJPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/MainJFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/MenuJPanel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameJPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/controler/GameController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/controler/ServerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/util/Constant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/Cell.java" />
       </list>
     </option>
   </component>
@@ -144,7 +133,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
@@ -165,7 +154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,9 +236,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -314,25 +303,6 @@
       <module name="Square" />
       <envs />
     </configuration>
-    <configuration name="GameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.copasso.tetris.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.copasso.tetris.view.GameClient" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Square" />
-      <envs />
-    </configuration>
     <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -341,25 +311,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.copasso.tetris.server.GameServer" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Square" />
-      <envs />
-    </configuration>
-    <configuration name="TicTacToeClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.copasso.tetris.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.copasso.tetris.view.TicTacToeClient" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -445,18 +396,14 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="4">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.App" />
-      <item index="1" class="java.lang.String" itemvalue="Application.GameClient" />
-      <item index="2" class="java.lang.String" itemvalue="Application.GameServer" />
-      <item index="3" class="java.lang.String" itemvalue="Application.TicTacToeClient" />
+      <item index="1" class="java.lang.String" itemvalue="Application.GameServer" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Application.App" />
         <item index="1" class="java.lang.String" itemvalue="Application.GameServer" />
-        <item index="2" class="java.lang.String" itemvalue="Application.GameClient" />
-        <item index="3" class="java.lang.String" itemvalue="Application.TicTacToeClient" />
       </list>
     </recent_temporary>
   </component>
@@ -484,11 +431,13 @@
       <workItem from="1527668877280" duration="13908000" />
       <workItem from="1527765256524" duration="3269000" />
       <workItem from="1527851264497" duration="8391000" />
+      <workItem from="1527866387569" duration="1302000" />
+      <workItem from="1527920202461" duration="11982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74955000" />
+    <option name="totallyTimeSpent" value="88239000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -500,8 +449,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -516,8 +464,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28755364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29613733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -529,7 +478,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,10 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="165" column="17" lean-forward="false" selection-start-line="165" selection-start-column="13" selection-end-line="165" selection-end-column="17" />
-          <folding>
-            <element signature="e#4996#4997#0" expanded="false" />
-            <element signature="e#5034#5035#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -596,7 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="6490" column="0" lean-forward="false" selection-start-line="6490" selection-start-column="0" selection-end-line="6490" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -626,16 +569,34 @@
           <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1281#1282#0" expanded="true" />
-            <element signature="e#1323#1324#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1481#1482#0" expanded="true" />
-            <element signature="e#9224#9225#0" expanded="true" />
-            <element signature="e#9269#9270#0" expanded="true" />
-            <element signature="e#9302#9303#0" expanded="true" />
-            <element signature="e#9335#9336#0" expanded="true" />
-            <element signature="e#9364#9365#0" expanded="true" />
-            <element signature="e#9393#9394#0" expanded="true" />
+            <element signature="method#GameJPanel#0;class#GameJPanel#0" expanded="false" />
+            <element signature="e#1290#1291#0" expanded="true" />
+            <element signature="e#1332#1333#0" expanded="true" />
+            <element signature="docComment;method#toDown#0;class#GameJPanel#0" expanded="false" />
+            <element signature="e#1464#1465#0" expanded="false" />
+            <element signature="e#1509#1510#0" expanded="false" />
+            <element signature="docComment;method#toLeft#0;class#GameJPanel#0" expanded="false" />
+            <element signature="method#toLeft#0;class#GameJPanel#0" expanded="false" />
+            <element signature="docComment;method#toRight#0;class#GameJPanel#0" expanded="false" />
+            <element signature="method#toRight#0;class#GameJPanel#0" expanded="false" />
+            <element signature="docComment;method#toRotate#0;class#GameJPanel#0" expanded="false" />
+            <element signature="method#toRotate#0;class#GameJPanel#0" expanded="false" />
+            <element signature="e#4054#4059#0" expanded="false" />
+            <element signature="docComment;method#drop#0;class#GameJPanel#0" expanded="false" />
+            <element signature="method#drop#0;class#GameJPanel#0" expanded="false" />
+            <element signature="e#8629#8636#0" expanded="false" />
+            <element signature="e#9415#9416#0" expanded="false" />
+            <element signature="e#9460#9461#0" expanded="false" />
+            <element signature="e#9294#9295#0" expanded="false" />
+            <element signature="e#9327#9328#0" expanded="false" />
+            <element signature="e#9356#9357#0" expanded="false" />
+            <element signature="e#9385#9386#0" expanded="false" />
+            <element signature="docComment;method#randomBlocks#0;class#GameJPanel#0" expanded="false" />
+            <element signature="method#randomBlocks#0;class#GameJPanel#0" expanded="false" />
+            <element signature="e#10041#10091#0" expanded="false" />
+            <element signature="docComment;method#getScore#0;class#GameJPanel#0" expanded="false" />
+            <element signature="docComment;method#changeBolckState#0;class#GameJPanel#0" expanded="false" />
+            <element signature="method#changeBolckState#0;class#GameJPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -648,44 +609,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="40" column="2" lean-forward="false" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/ScoreListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="46" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/controler/ServerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameClient.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/ScoreListener.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/GameListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -695,24 +624,97 @@
         <state relative-caret-position="92">
           <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding>
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="false" />
+            <element signature="e#398#399#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleASession.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleASession.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameJPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="305" column="50" lean-forward="true" selection-start-line="305" selection-start-column="50" selection-end-line="305" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1290#1291#0" expanded="true" />
+            <element signature="e#1332#1333#0" expanded="true" />
+            <element signature="docComment;method#toDown#0;class#GameJPanel#0" expanded="false" />
+            <element signature="docComment;method#toLeft#0;class#GameJPanel#0" expanded="false" />
+            <element signature="docComment;method#toRight#0;class#GameJPanel#0" expanded="false" />
+            <element signature="docComment;method#toRotate#0;class#GameJPanel#0" expanded="false" />
+            <element signature="e#4054#4059#0" expanded="false" />
+            <element signature="docComment;method#drop#0;class#GameJPanel#0" expanded="false" />
+            <element signature="method#drop#0;class#GameJPanel#0" expanded="false" />
+            <element signature="e#8629#8636#0" expanded="false" />
+            <element signature="e#9491#9492#0" expanded="true" />
+            <element signature="e#9517#9518#0" expanded="true" />
+            <element signature="docComment;method#randomBlocks#0;class#GameJPanel#0" expanded="false" />
+            <element signature="e#10041#10091#0" expanded="false" />
+            <element signature="docComment;method#getScore#0;class#GameJPanel#0" expanded="false" />
+            <element signature="docComment;method#changeBolckState#0;class#GameJPanel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="26" />
+          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/MainJFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1334">
+          <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/controler/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1226">
+          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4185#4186#0" expanded="true" />
+            <element signature="e#4214#4215#0" expanded="true" />
+            <element signature="e#4293#4294#0" expanded="true" />
+            <element signature="e#4325#4326#0" expanded="true" />
+            <element signature="method#keyTyped#0;class#GameController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/controler/ServerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="35" column="52" lean-forward="false" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/MenuJPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="40" />
+          <folding>
+            <element signature="e#1362#1363#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/server/HandleThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="59" column="5" lean-forward="true" selection-start-line="53" selection-start-column="3" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="851">
+          <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -722,87 +724,15 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/util/Constant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/MainJFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/model/Cell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/MenuJPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/controler/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3089#3090#0" expanded="true" />
-            <element signature="e#3121#3122#0" expanded="true" />
-            <element signature="e#3200#3201#0" expanded="true" />
-            <element signature="e#3232#3233#0" expanded="true" />
-            <element signature="method#keyTyped#0;class#GameController#0" expanded="false" />
-            <element signature="method#keyPressed#0;class#GameController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/view/GameJPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1525">
-          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#GameJPanel#0;class#GameJPanel#0" expanded="false" />
-            <element signature="e#1281#1282#0" expanded="true" />
-            <element signature="e#1323#1324#0" expanded="true" />
-            <element signature="docComment;method#toDown#0;class#GameJPanel#0" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1481#1482#0" expanded="true" />
-            <element signature="docComment;method#toLeft#0;class#GameJPanel#0" expanded="false" />
-            <element signature="method#toLeft#0;class#GameJPanel#0" expanded="false" />
-            <element signature="docComment;method#toRight#0;class#GameJPanel#0" expanded="false" />
-            <element signature="method#toRight#0;class#GameJPanel#0" expanded="false" />
-            <element signature="docComment;method#toRotate#0;class#GameJPanel#0" expanded="false" />
-            <element signature="method#toRotate#0;class#GameJPanel#0" expanded="false" />
-            <element signature="e#3986#3991#0" expanded="false" />
-            <element signature="docComment;method#drop#0;class#GameJPanel#0" expanded="false" />
-            <element signature="method#drop#0;class#GameJPanel#0" expanded="false" />
-            <element signature="e#8629#8636#0" expanded="false" />
-            <element signature="e#9224#9225#0" expanded="true" />
-            <element signature="e#9269#9270#0" expanded="true" />
-            <element signature="e#9302#9303#0" expanded="true" />
-            <element signature="e#9335#9336#0" expanded="true" />
-            <element signature="e#9364#9365#0" expanded="true" />
-            <element signature="e#9393#9394#0" expanded="true" />
-            <element signature="docComment;method#randomBlocks#0;class#GameJPanel#0" expanded="false" />
-            <element signature="method#randomBlocks#0;class#GameJPanel#0" expanded="false" />
-            <element signature="e#9622#9672#0" expanded="false" />
-            <element signature="docComment;method#getScore#0;class#GameJPanel#0" expanded="false" />
-            <element signature="docComment;method#changeBolckState#0;class#GameJPanel#0" expanded="false" />
-            <element signature="method#changeBolckState#0;class#GameJPanel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/copasso/tetris/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
         </state>
       </provider>

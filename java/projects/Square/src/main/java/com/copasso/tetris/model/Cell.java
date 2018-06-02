@@ -5,6 +5,9 @@ import java.awt.*;
 
 import static com.copasso.tetris.util.Constant.BLOCK_SIZE;
 
+/**
+ * 小方块
+ */
 public class Cell extends JPanel {
     private int row;
     private int column;

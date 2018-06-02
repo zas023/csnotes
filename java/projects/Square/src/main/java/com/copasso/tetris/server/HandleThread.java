@@ -1,5 +1,7 @@
 package com.copasso.tetris.server;
 
+import com.copasso.tetris.util.Constant;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -27,13 +29,13 @@ public class HandleThread implements Runnable{
             fromPlayer = new DataInputStream(player1.getInputStream());
             toPlayer = new DataOutputStream(player2.getOutputStream());
 
-            toPlayer.writeInt(1);
+            toPlayer.writeInt(Constant.MSG_START);
 
             while (true) {
-                // 从客户端中获取得分
+                // 从客户端中获取消息
                 System.out.println("readInt start");
-                int score = fromPlayer.readInt();
-                toPlayer.writeInt(score);
+                int status = fromPlayer.readInt();
+                toPlayer.writeInt(status);
                 System.out.println("writeInt end");
             }
 

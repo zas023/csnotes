@@ -3,17 +3,21 @@ package com.copasso.tetris.view;
 import javax.swing.*;
 import java.awt.*;
 
+import static com.copasso.tetris.util.Constant.BLOCK_SIZE;
+import static com.copasso.tetris.util.Constant.NUM_COL;
+import static com.copasso.tetris.util.Constant.NUM_ROW;
+
 /**
  * 菜单信息栏
  */
 public class MenuJPanel extends JPanel{
 
-    private JLabel lblScroe1,lblScroe2;
+    private JLabel lblScroe1,lblScroe2,lblInfo;
     private int score1,score2;
 
     public MenuJPanel(){
-        setSize(100,600);
-        setLayout(new GridLayout(2,1));
+        setSize(100,100);
+        setLayout(new GridLayout(2,2));
 
         lblScroe1 = new JLabel();
         lblScroe1.setFont(new Font("微软雅黑", Font.PLAIN, 20));
@@ -26,6 +30,12 @@ public class MenuJPanel extends JPanel{
         lblScroe2.setForeground(Color.BLACK);
         lblScroe2.setText("His Score: "+score2);
         add(lblScroe2);
+
+        lblInfo = new JLabel();
+        lblInfo.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        lblInfo.setForeground(Color.BLACK);
+        lblInfo.setText("Waiting for ...");
+        add(lblInfo);
     }
 
     public void setScore(int score1,int score2){
@@ -34,6 +44,10 @@ public class MenuJPanel extends JPanel{
 
         lblScroe1.setText("Your Score: "+score1);
         lblScroe2.setText("His Score: "+score2);
+    }
+
+    public void setInfo(String s){
+        lblInfo.setText(s);
     }
 
 }

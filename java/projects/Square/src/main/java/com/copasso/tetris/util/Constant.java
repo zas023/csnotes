@@ -9,7 +9,7 @@ import java.util.Map;
 public class Constant {
     /************************Client**************************/
     // 每个方块的边长
-    public static final int BLOCK_SIZE = 30;
+    public static final int BLOCK_SIZE = 20;
     // 游戏空间行数
     public static final int NUM_ROW = 20;
     // 游戏空间列数
@@ -18,10 +18,16 @@ public class Constant {
     /************************Server**************************/
     public static int PLAYER1 = 1; // Indicate player 1
     public static int PLAYER2 = 2; // Indicate player 2
-    public static int PLAYER1_WON = 1; // Indicate player 1 won
-    public static int PLAYER2_WON = 2; // Indicate player 2 won
-    public static int PLAYER_DRAW = 3; // Indicate a draw
-    public static int PLAYER_START = 4; // Indicate to start
+
+    public static int MSG_START = 1;
+    public static int MSG_END = 2;
+    public static int MSG_WAIT = 3;
+    public static int MSG_MAP = 4;
+    public static int MSG_SCORE = 5;
+
+    public static int COLOR_RED = 11;
+    public static int COLOR_BLUE = 12;
+    public static int COLOR_WHITE = 13;
 
     public static final Map<Integer, String> CONST_INFO = new HashMap<Integer, String>();
 
