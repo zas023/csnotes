@@ -35,27 +35,12 @@ public class HandleThread implements Runnable{
                 // 从客户端中获取消息
                 System.out.println("readInt start");
                 int status = fromPlayer.readInt();
+                // 向客户端传递消息
                 toPlayer.writeInt(status);
                 System.out.println("writeInt end");
             }
 
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void sendMessage(String str){
-        try {
-            toPlayer.writeChars(str);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void sendMessage(int i){
-        try {
-            toPlayer.writeInt(i);
         } catch (IOException e) {
             e.printStackTrace();
         }

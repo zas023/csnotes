@@ -51,8 +51,7 @@ public class GameJPanel extends JPanel {
         this.controller=controller;
     }
 
-    public void setListener(GameListener listener){this.listener=listener;}
-
+    /**************************方向操作**********************************/
     /**
      * 向下移动
      */
@@ -285,7 +284,7 @@ public class GameJPanel extends JPanel {
             isGameOver=true;
         }
     }
-    /************************************************************/
+    /****************************游戏状态********************************/
 
     public boolean isGameOver(){
         return isGameOver;
@@ -308,7 +307,7 @@ public class GameJPanel extends JPanel {
         repaint();
     }
 
-    /************************************************************/
+    /*****************************定时操作*******************************/
     /**
      * 生成随机的方块图形
      */
