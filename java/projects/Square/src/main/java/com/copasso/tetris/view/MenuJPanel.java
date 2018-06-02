@@ -37,7 +37,7 @@ public class MenuJPanel extends JPanel{
         lblInfo = new JLabel();
         lblInfo.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         lblInfo.setForeground(Color.BLACK);
-        lblInfo.setText("Waiting for ...");
+        lblInfo.setText("Waiting for player online ...");
         add(lblInfo);
     }
 

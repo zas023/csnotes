@@ -38,7 +38,7 @@ public class GameJPanel extends JPanel {
 
     public GameJPanel(){
         setSize(NUM_COL * BLOCK_SIZE, NUM_ROW * BLOCK_SIZE);
-        setLayout(new GridLayout(NUM_ROW, NUM_COL));
+        setLayout(new GridLayout(NUM_ROW, NUM_COL,3,3));
         //初始化地图
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {

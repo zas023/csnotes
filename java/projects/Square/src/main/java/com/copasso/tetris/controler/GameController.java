@@ -63,8 +63,10 @@ public class GameController implements KeyListener {
             if (gameJPanel.isGameOver()){
                 //游戏结束
                 System.out.println("begin to end game");
+                menuJPanel.setInfo("Waiting for end..." );
                 try {
                     toServer.writeInt(Constant.MSG_END);
+                    serverController.sendMap(gameJPanel.getMap());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
