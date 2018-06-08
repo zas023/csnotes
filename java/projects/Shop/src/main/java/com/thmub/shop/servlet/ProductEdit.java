@@ -38,11 +38,11 @@ public class ProductEdit extends HttpServlet {
         out.println("<body>");
         out.println("<form action=\"/product/add\" method=\"get\">");
         if (product==null){
-            out.println("<p>产品编号: <input type=\"text\" name=\"id\" value=\"0\" disabled=\"disabled\"/></p>");
-            out.println("<p>产品名称: <input type=\"text\" name=\"name\"/></p>");
-            out.println("<p>产品数量: <input type=\"text\" number=\"number\"/></p>");
+            out.println("<p>产品编号: <input type=\"text\" name=\"id\" value=\"0\"></p>");
+            out.println("<p>产品名称: <input type=\"text\" name=\"name\"></p>");
+            out.println("<p>产品数量: <input type=\"text\" name=\"number\"></p>");
         }else {
-            out.println("<p>产品编号: <input type=\"text\" name=\"id\" disabled=\"disabled\" value="+product.getId()+"></p>");
+            out.println("<p>产品编号: <input type=\"text\" name=\"id\" value="+product.getId()+"></p>");
             out.println("<p>产品名称: <input type=\"text\" name=\"name\" value="+product.getName()+"></p>");
             out.println("<p>产品数量: <input type=\"text\" name=\"number\" value="+product.getNumber()+"></p>");
         }
