@@ -1,4 +1,4 @@
- * [背景](#背景)
+   * [背景](#背景)
    * [安装](#安装)
       * [（一）Linux子系统](#一linux子系统)
       * [（二）gh-md-toc](#二gh-md-toc)
@@ -7,7 +7,7 @@
       * [（二）Remote files](#二remote-files)
    * [参考](#参考)
 
-# 背景
+## 背景
 
 > 目录一直是github的一大缺失，每次在github写README.md 和Markdown博客时，内容较多时阅读不方便，也没有自动生成的 TOC(目录)。有需求，才有创作。
 
