@@ -72,8 +72,6 @@ $ chmod a+x gh-md-toc
 
 2. 同Local files
 
-
-
 # 参考
 
 [1] 项目地址：https://github.com/ekalinin/github-markdown-toc/blob/master/README.md
