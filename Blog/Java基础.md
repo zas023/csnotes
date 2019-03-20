@@ -233,7 +233,7 @@ long l = i;
 
 自动转换关系图：
 
-![Snipaste_2019-03-19_21-39-43](assets/Snipaste_2019-03-19_21-39-43.png)
+[![Java-Snipaste-2019-03-19-21-39-43.png](https://i.postimg.cc/HLhHSCkf/Java-Snipaste-2019-03-19-21-39-43.png)](https://postimg.cc/4KVrdqt5)
 
 实线表示自动转换时不会造成数据丢失，虚线则可能会出现数据丢失问题。
 
