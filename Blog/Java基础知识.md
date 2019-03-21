@@ -603,3 +603,65 @@ public class Car extends Vehicle {
 
 # 七、Java String 类
 
+> 在 Java语言中有8种基本类型和一种比较特殊的类型`String`。由于`String`在Java世界中使用过于频繁，Java为了避免在一个系统中产生大量的String对象，引入了字符串常量池（当然基础类型也有）。
+
+## 常量池
+
+常量池就类似一个Java系统级别提供的缓存，指的是在编译期被确定，并被保存在已编译的.class文件中的一些数据。它包括了关于类、方法、接口等中的常量，也包括字符串常量。Java会确保一个字符串常量只有一个拷贝。
+
+```java
+String s1 = "Programming";
+String s2 = new String("Programming");
+String s3 = "Program" + "ming";
+String s4 = new String(s2);
+String s5 = "Programming";
+
+System.out.println(s1 == s2);//false
+System.out.println(s4 == s2);//false
+System.out.println(s1 == s3);//true
+System.out.println(s1 == s5);//true
+System.out.println(s1 == s1.intern());//true
+
+s2.intern();
+System.out.println(s1 == s2);//false 没有将返回值赋值给s2
+
+s2=s2.intern();
+System.out.println(s1 == s2);//true
+```
+
+- s1和s3中的”Programming”都是字符串常量，它们在编译期就被确定了，所以s1==s3为true；而”Program”和”ming”也都是字符串常量，当一个字符串由多个字符串常量连接而成时，JVM对此做了一个优化，s3也同样在编译期就被解析为一个字符串常量，所以s3也是常量池中 ”Programming”的一个引用。 所以我们得出s5==s1==s3
+-  用new String() 创建的字符串不是常量，不能在编译期就确定，所以new String() 创建的字符串不放入常量池中，它们有自己的地址空间。所以有s2！=s4
+- String对象的intern()方法会得到字符串对象在常量池中对应的版本的引用（如果常量池中有一个字符串与String对象的equals结果是true），如果常量池中没有对应的字符串，则该字符串将被添加到常量池中，然后返回常量池中字符串的引用。
+
+**补充：**存在于.class文件中的常量池，在运行期被JVM装载，并且可以扩充。String的intern()方法就是扩充常量池的一个 方法；当一个String实例str调用intern()方法时，Java查找常量池中是否有相同Unicode的字符串常量，如果有，则返回其的引用， 如果没有，则在常量池中增加一个Unicode等于str的字符串并返回它的引用。
+
+## String是不可变的
+
+> String 是一个典型的 Immutable 类，被声明成为 final class，所有属性也都是 final 的。也由于它的不可变，类似拼接、裁剪字符串等动作，都会产生新的 String 对象。
+
+- 可以缓存Hash值：因为 String 的 hash 值经常被使用，例如 String 用做 HashMap 的 key。不可变的特性可以使得 hash 值也不可变，因此只需要进行一次计算。
+
+- 常量池的需要：如果一个String对象已经被创建过了，那么就会从 String Pool 中取得引用。只有 String 是不可变的，才可能使用 String Pool。
+
+- 线程安全：String 不可变性天生具备线程安全，可以在多个线程中安全地使用。
+
+## equals() & ==
+
+- String类已经重写过了equals方法，这对于String简单来说就是比较两字符串的Unicode序列是否相当，如果相等返回true。而==是比较两字符串的地址是否相同，也就是是否是同一个字符串的引用。
+
+- 在符合数据类型中，则equals和==都是比较两对象的地址是否相同，除非重写equals，详见hashcode与equals的区别。
+
+## StringBuffer & StringBuilder
+
+- StringBuffer和StringBuilder都实现了AbstractStringBuilder抽象类，拥有几乎一致对外提供的调用接口。
+- 其底层在内存中的存储方式与String相同，都是以一个有序的字符序列（char类型的数组，JDK 9 以后是 byte）进行存储，不同点是StringBuffer/StringBuilder对象的值是可以改变的，并且值改变以后，对象引用不会发生改变。
+- 两者对象在构造过程中，首先按照默认大小申请一个字符数组（这个大小是 16），由于会不断加入新数据，当超过默认大小后，会创建一个更大的数组，并将原先的数组内容通过arraycopy复制过来，再丢弃旧的数组。因此，对于较大对象的扩容会涉及大量的内存复制操作，如果能够预先评估大小，可提升性能。
+
+- **在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的。**区别仅在于最终的方法是否加了 synchronized
+
+**小结：**
+
+1. String适用于少量的字符串操作的情况。
+
+2. StringBuilder适用于单线程下在字符缓冲区进行大量操作的情况。
+3. StringBuffer适用多线程下在字符缓冲区进行大量操作的情况。
