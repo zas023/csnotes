@@ -126,13 +126,41 @@
 
 **Example:**
 
-- 合法标识符举例：age、$salary、_value、__1_value
+- 合法标识符举例：age、$salary、_value、_1_value
 - 非法标识符举例：123abc、-salary
 
 ## 数组
 
-> 数组是储存在堆上的对象，可以保存多个同类型变量。
+> 数组是储存在堆上的对象，可以保存多个同类型变量，这些变量类型既可以存储基本数据类型，也可以存储引用数据类型。
 
+### **一维数组**
+
+**数组的格式**
+
+```java
+int[] a；     定义了一个int类型的数组a；
+int a[];      定义了一个int类型的a数组；
+//推荐使用第一种定义方式。
+```
+
+**数组的初始化**
+
+所谓初始化：就是为数组中的数组元素分配内存空间，并为每个数组元素赋值。Java中的数组必须先初始化,然后才能使用。
+
+- **动态初始化：** 只指定长度，由系统给出初始化值。
+- **静态初始化：** 给出初始化值，不用new关键字完成，由系统决定长度。
+- **默认初始化：**数组是引用类型，它的元素相当于类的成员变量，因此数组分配空间后，每个元素也被按照成员变量的规则被隐士初始化。
+
+### **二维数组**
+
+**定义格式**
+
+```java
+int[][] arr = new int[3][2];
+//定义了一个二维数组arr
+//这个二维数组有3个一维数组，名称是arr[0],arr[1],arr[2]
+//每个一维数组有2个元素，可以通过arr[m][n]来获取,表示获取第m+1个一维数组的第n+1个元素
+```
 ## 枚举
 
 > Java 5.0引入了枚举，枚举限制变量只能是预先设定好的值。使用枚举可以减少代码中的bug。
@@ -330,6 +358,68 @@ long totalPrice = price * count;
 
 //price 为 int 型，count 为 long 型，运算结果为 long 型，运算结果正常，没有出现溢出的情况。
 ```
+
+## 参数传递
+
+Java 的参数是以值传递的形式传入方法中，而不是引用传递。在将一个参数传入一个方法时，本质上是将对象的地址以值的方式传递到形参中。因此在方法中使指针引用其它对象，那么这两个指针此时指向的是完全不同的对象，在一方改变其所指向对象的内容时对另一方没有影响。
+
+- 基本类型作为参数传递时，是传递值的拷贝，无论你怎么改变这个拷贝，原值是不会改变的。
+
+  ```java
+  public class Test {
+         public static void main(String[] args) {
+             int n = 3;
+             
+             System.out.println("Before change, n = " + n);     
+             //Before change, n = 3
+             
+             changeData(n);
+             System.out.println("After changeData(n), n = " + n);
+             //After changeData(n), n = 3
+         }
+      
+         public static void changeData(int nn) {
+             n = 10;
+         }
+  }
+  ```
+
+- 对象作为参数传递时，是把对象在内存中的地址拷贝了一份传给了参数。
+
+  ```java
+  public class Test1 {
+      public static void main(String[] args) {
+          StringBuffer sb = new StringBuffer("Hello ");
+          System.out.println("Before change, sb = " + sb);
+          //Before change, sb = Hello
+          
+          changeData(sb);
+          System.out.println("After changeData(n), sb = " + sb);
+          //After changeData(n), sb = Hi World!
+      }
+      public static void changeData(StringBuffer strBuf) {
+          strBuf.append("World!");
+      }
+  }
+  
+  public class Test2 {
+      public static void main(String[] args) {
+          StringBuffer sb = new StringBuffer("Hello ");
+          System.out.println("Before change, sb = " + sb);
+          //Before change, sb = Hello
+          
+          changeData(sb);
+          System.out.println("After changeData(n), sb = " + sb);
+          //After changeData(n), sb = Hello
+      }
+      public static void changeData(StringBuffer strBuf) {
+          strBuf = new StringBuffer("Hi ");
+          strBuf.append("World!");
+      }
+  }
+  ```
+
+[StackOverflow: Is Java “pass-by-reference” or “pass-by-value”?](https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value)
 
 # 四、Java 变量类型
 
@@ -657,7 +747,7 @@ System.out.println(s1 == s2);//true
 - 其底层在内存中的存储方式与String相同，都是以一个有序的字符序列（char类型的数组，JDK 9 以后是 byte）进行存储，不同点是StringBuffer/StringBuilder对象的值是可以改变的，并且值改变以后，对象引用不会发生改变。
 - 两者对象在构造过程中，首先按照默认大小申请一个字符数组（这个大小是 16），由于会不断加入新数据，当超过默认大小后，会创建一个更大的数组，并将原先的数组内容通过arraycopy复制过来，再丢弃旧的数组。因此，对于较大对象的扩容会涉及大量的内存复制操作，如果能够预先评估大小，可提升性能。
 
-- **在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的。**区别仅在于最终的方法是否加了 synchronized
+- **在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的。**区别仅在于最终的方法是否加了 synchronized，即三者的执行效率上 StringBuilder > StringBuffer > String 。
 
 **小结：**
 
