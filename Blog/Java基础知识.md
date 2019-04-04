@@ -754,4 +754,122 @@ System.out.println(s1 == s2);//true
 1. String适用于少量的字符串操作的情况。
 
 2. StringBuilder适用于单线程下在字符缓冲区进行大量操作的情况。
+
 3. StringBuffer适用多线程下在字符缓冲区进行大量操作的情况。
+
+
+# 八、Object 方法
+
+## 概况
+
+```java
+public native int hashCode()
+
+public boolean equals(Object obj)
+
+protected native Object clone() throws CloneNotSupportedException
+
+public String toString()
+
+public final native Class<?> getClass()
+
+protected void finalize() throws Throwable {}
+
+public final native void notify()
+
+public final native void notifyAll()
+
+public final native void wait(long timeout) throws InterruptedException
+
+public final void wait(long timeout, int nanos) throws InterruptedException
+
+public final void wait() throws InterruptedException
+```
+
+## equals()
+
+1. **等价关系**
+
+   ```java
+   //自反性
+   x.equals(x); // true
+   
+   //对称性 
+   x.equals(y) == y.equals(x); // true
+   
+   //传递性 
+   if (x.equals(y) && y.equals(z))
+       x.equals(z); // true;
+   
+   //一致性，多次调用 equals() 方法结果不变
+   x.equals(y) == x.equals(y); // true
+   
+   //与 null 的比较
+   //对任何不是 null 的对象 x 调用 x.equals(null) 结果都为 false
+   x.equals(null); // false;
+   ```
+
+   
+
+2. **等价与相等**
+
+   - 对于基本类型，== 判断两个值是否相等，基本类型没有 equals() 方法。
+   - 对于引用类型，== 判断两个变量是否引用同一个对象，而 equals() 判断引用的对象是否等价。
+
+3. **实现**
+
+   ```java
+   public class EqualExample {
+   
+       private int x;
+       private int y;
+       private int z;
+   
+       public EqualExample(int x, int y, int z) {
+           this.x = x;
+           this.y = y;
+           this.z = z;
+       }
+   
+       @Override
+       public boolean equals(Object o) {
+           if (this == o) return true;  //检查是否为同一个对象的引用，如果是直接返回 true
+           if (o == null || getClass() != o.getClass()) return false;  //检查是否是同一个类型，如果不是，直接返回 false
+   
+           EqualExample that = (EqualExample) o;  //将 Object 对象进行转型
+   
+           if (x != that.x) return false;  //判断每个关键域是否相等
+           if (y != that.y) return false;
+           return z == that.z;
+       }
+   }
+   ```
+
+   
+
+## hashCode()
+
+- hashCode() 返回散列值，而 equals() 是用来判断两个对象是否等价。等价的两个对象散列值一定相同，但是散列值相同的两个对象不一定等价。
+- 在覆盖 equals() 方法时应当总是覆盖 hashCode() 方法，保证等价的两个对象散列值也相等。
+
+## toString()
+
+> 默认返回 Example@4554617c 这种形式，其中 @ 后面的数值为散列码的无符号十六进制表示。
+>
+> ## clone()
+>
+> 1. **cloneable**
+>
+>    clone() 是 Object 的 protected 方法，它不是 public，一个类不显式去重写 clone()，其它类就不能直接去调用该类实例的 clone() 方法。
+>
+> 2. **浅拷贝**
+>
+>    拷贝对象和原始对象的引用类型引用同一个对象。
+>
+> 3. **深拷贝**
+>
+>    拷贝对象和原始对象的引用类型引用不同对象。
+>
+> 4. **clone() 的替代方案**
+>
+>    使用 clone() 方法来拷贝一个对象即复杂又有风险，它会抛出异常，并且还需要类型转换。Effective Java 书上讲到，最好不要去使用 clone()，可以使用拷贝构造函数或者拷贝工厂来拷贝一个对象。
