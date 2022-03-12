@@ -1,15 +1,34 @@
-# CSNotes
+# 大厂后端面试葵花宝典
+> @author 程序猿周周
 
-> Enosh's Learning Notes: Coding is life, but not all.
+## Java
 
-## :coffee: Java
+- [Java基础面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123080189)
+- [Java集合面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123171501)
+- [Java并发面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123266624)
+- [Java虚拟机面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123412605)
 
-- [Java 基础](https://github.com/zas023/CSNotes/blob/master/Blog/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
-- [Java OOP](https://github.com/zas023/CSNotes/blob/master/Blog/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.md)
+## 数据库 
 
-## :wrench: Other
+- [MySQL数据库面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/122910606)
 
-- [Markdown 入门](https://github.com/zas023/CSNotes/blob/master/Blog/Markdown%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.md)
+- [Redis面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/122934938)
 
-- [Github TOC 目录](https://github.com/zas023/CSNotes/blob/master/Blog/Github%E6%B7%BB%E5%8A%A0TOC%E7%9B%AE%E5%BD%95.md)
+## 计算机网络
 
+- [计算机网络面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/122973684)
+
+## 操作系统
+
+- [操作系统面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/122994599)
+
+- [Linux面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/122994862)
+
+## Spring
+
+- [Spring面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123016872)
+
+## 公众号
+欢迎关注公众号【猿栖】获取电子版和更多学习资料👏🏻
+
+![](https://gitee.com/zhouas666/imgur/raw/master/img/扫码_搜索联合传播样式-标准色版.png)

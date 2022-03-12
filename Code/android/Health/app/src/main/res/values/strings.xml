@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Health</string>
-    <string name="btn_bmi">体重指数</string>
-    <string name="btn_blood">血糖</string>
-    <string name="btn_stress">血压</string>
-</resources>
