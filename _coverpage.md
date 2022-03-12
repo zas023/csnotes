@@ -8,4 +8,4 @@
 - 关注公众号【猿栖】获取电子版和更多学习资料
 
 [GitHub](https://github.com/zas023/CSNotes)
-[Get Started](#docsify)
+[Get Started](#大厂后端面试小册子)
