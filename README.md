@@ -39,7 +39,7 @@
 - [Netty面试题总结（2022版）]
 - [Kafka面试题总结（2022版）]
 - [RocketMQ面试题总结（2022版）]
-- [Dubbo面试题总结（2022版）]
+- [Dubbo面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123538243)
 - [Zookeeper面试题总结（2022版）]
 
 ## 系统设计
