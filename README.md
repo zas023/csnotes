@@ -37,9 +37,13 @@
 - [Spring面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123016872)
 
 - [Netty面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123564362)
-- [Kafka面试题总结（2022版）]
+
+- [Kafka面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123674437)
+
 - [RocketMQ面试题总结（2022版）]
+
 - [Dubbo面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123538243)
+
 - [Zookeeper面试题总结（2022版）]
 
 ## 系统设计
