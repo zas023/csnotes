@@ -40,7 +40,7 @@
 
 - [Kafka面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123674437)
 
-- [RocketMQ面试题总结（2022版）]
+- [RocketMQ面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123977683)
 
 - [Dubbo面试题总结（2022版）](https://blog.csdn.net/adminpd/article/details/123538243)
 
