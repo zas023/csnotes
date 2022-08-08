@@ -1,6 +1,6 @@
 > 大厂后端面试小册子
 
-@author 程序猿周周
+@Author 程序猿周周
 
 ## Java
 
@@ -59,7 +59,7 @@
 - [社交关系链原理和实现](https://blog.csdn.net/adminpd/article/details/122015182)
 
 ## 公众号
-欢迎关注公众号【猿栖】获取电子版和更多学习资料👏🏻
+欢迎关注公众号【程序猿周周】获取电子版和更多学习资料👏🏻
 
 ![](https://cdn.jsdelivr.net/gh/zas023/CSNotes/assest/gongzhonghao.png)
 
